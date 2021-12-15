@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nate Wheaton</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="GraphicsStyle.css">
+    <link rel="icon" href="images/nwlogo2.jpeg">
+    
+</head>
+<body>
+    <div id="container">
+        
+        <canvas id="canvas1"></canvas>
+        <div id="content">
+        <div id="menubar">
+            <a id= "menutoggle" href="#">
+                <i class="fas fa-bars"></i>
+
+            </a>
+        </div>
+        <div id="banner">
+            <canvas id="threejsgraphic"></canvas>
+            <div id="bannercontentcontainer">
+                <h1 id="header1">
+                    <span id="greet1">Hello World, </span>
+                    <span id="greet2">I'm</span>
+                    <span id="name">Nate Wheaton</span>
+                    
+                </h1>
+                <div id="quicklinks" >
+                    <ul >
+                        <li><a href="mailto:mr.natewheaton@gmail.com" target="blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/nathaniel-wheaton-5b1544187/" target="blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+        
+                        <li>
+                            <a href="https://github.com/npwheaton" target="blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+        
+                        <li>
+                            <a href="documents/updatedresume2021.pdf" target="blank">
+                                <i class="fas fa-print"></i>
+                            </a>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="readableContent">
+        
+        <div id="aboutInfo" class="article">
+            <div id="aboutanchor" class="anchor"></div>
+            <h2 id="aboutheader" class="articleheader"> <span class="headertext">About</span> </h2>
+            <p id="para1">Passionate programmer looking to learn and grow as I contribute my knowledge and skills to the overall growth of an organization.
+                I love creating projects to work on in my free time, and I love learning new things. 
+                Right now I'm delving deeper into web development. 
+                Some of my other hobbies include working out at the gym, playing videogames, reading fiction, and cooking.
+            </p>
+                <div id="schoolinfo">
+                    <h3 id="educationtagheader">Education</h3>
+                    
+                    <h3> <span><img src="images/300px-St._Cloud_State_Huskies_logo.png" alt="saint cloud state logo"></span> 
+                        Saint Cloud State University</h3>
+                    <p> <span><i class="fas fa-graduation-cap"></i></span> Bachelor's Degree in Computer Science</p>
+                    <p>Completed Coursework: Object-Oriented Database design, Design and Analysis of Algorithms,  Artificial Intelligence  and Computer Vision </p>
+                </div>
+                <div id="skills">
+                    <h3 id="skillheader">Skills</h3>
+                    <ul id="skilllist">
+                        <li>
+                            <h3>Java</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar= "66">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>C++</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="60">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>SQL</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="45">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>HTML/CSS</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="31">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>Javascript</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="32">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>Git</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="15">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>Nodejs</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="25">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>Quick Learner</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="90">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>Attention to detail</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="95">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>Communication</h3>
+                            <div class="progresscontainer">
+                                <div class="progressbar" data-progressbar="75">
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            
+        </div>
+        
+        <div id="experienceInfo" class="article">
+            <div id="experienceanchor" class="anchor"></div>
+            <h2  id="experienceheader" class="articleheader"> <span class="headertext">Experience</span></h2>
+            <div class="job">
+                <h3 class="companyname">Minnesota Department of Natural Resources <span class="jobbutton"><i class="fas fa-plus-circle"></i></span></h3>
+                <h3 class="jobtitle">OPERATION SERVICES INTERN <span class="jobduration">July 2017 – August 2017</span></h3>
+                <p>St. Paul</p>
+            <ul class="jobduties hideitem">
+                <li class="duty">Analyzed and identified discrepancies in report data</li>
+                <li class="duty">Assembled data for quarterly reports and meeting packets for a team</li>
+                <li class="duty">Created security badges for new staff</li>
+                <li class="duty">Scanned and organized security badge access applications</li>
+                <li class="duty">Found and relayed critical bugs to upper management leading to a more secure website</li>
+                <li class="duty">Mapped GIS coordinates for DNR buildings</li>
+                <li class="duty">Accurately tracked and updated lease information which reduced discrepancies by 35%</li>
+            </ul>
+            </div>
+            <div class="job">
+                <h3 class="companyname">N.M. Properties Management LLC <span class="jobbutton"><i class="fas fa-plus-circle"></i></span></h3>
+                <h3 class="jobtitle">ASSISTANT ADMINISTRATOR <span class="jobduration">April 2019 – June 2020</span></h3>
+                <p>Minneapolis</p>
+            <ul class="jobduties hideitem">
+                <li class="duty">Monitored and recorded expenditures</li>
+                <li class="duty">Managed and distributed office information</li>
+                <li class="duty">Monitored client and bank stored information</li>
+                <li class="duty">Developed and maintained friendly relationships with renters, leading to efficient renter conflict resolution</li>
+            </ul>
+            </div>
+            
+        </div>
+        
+        <div id="projectsInfo" class="article">
+            <div id="projectsanchor" class="anchor"></div>
+            <h2  id="projectsheader"class="articleheader"> <span class="headertext">Projects</span></h2>
+            <div id="Carousel">
+                <div id="dotContainer"></div>
+                <article class="projectDiv">
+                    <img src="images/warehouse.png" alt="project picture">
+                   <div class="projectArticle">
+                       <div class="projectheaderonly">
+                        <h3 class="uniqueprojecthead">GROUP16 WAREHOUSE</h3>
+                       </div>
+                       <p>I led a team of programmers in creating an inventory database where users can buy products, order supply and manage client information using object-oriented database design.</p>
+                       <p class="language">Languages/Techonologies used: Java</p>
+                       <div class="projectlinkonly">
+                            <a href="https://github.com/npwheaton/group16-warehouse"  target="blank" class="uniqueprojectlink">Learn More</a>
+                        </div>
+                   </div>
+                </article>
+
+                <article class="projectDiv">
+                        <img src="images/teamfomlogo1.png" alt="project picture"> 
+                    <div class="projectArticle">
+                        <div class="projectheaderonly">
+                            <h3 class="uniqueprojecthead">TeamForm</h3>
+                           </div>
+                        <p>I created a program that builds the best team out of a companies’ employees to complete a list of company projects. 
+                            This program increased company efficiency by 10% by using a genetic algorithm to streamline the team-planning process.</p>
+                        <p class="language">Languages/Techonologies used: Java</p>
+                        <div class="projectlinkonly">
+                            <a href="https://github.com/npwheaton/TeamForm"  target="blank" class="uniqueprojectlink">Learn More</a>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article class="projectDiv">
+                        <img src="images/paintboxlogo1.png" alt="project picture"> 
+                    <div class="projectArticle">
+                        <div class="projectheaderonly">
+                            <h3 class="uniqueprojecthead">PaintBox</h3>
+                           </div>
+                        <p>I created a full-stack application that allows users to collaborate, draw and chat in real-time on a canvas. 
+                            The frontend of this application uses websockets to allow users collaborate. The backend is coded in Javascript using the Nodejs runtime enviroment. 
+                            The backend hosts the frontend using the Express library, and saves the data using SQL. </p>
+                        <p class="language">Languages/Techonologies used: Javascript, SQL, Nodejs, Socket.io, Express</p>
+                        <div class="projectlinkonly">
+                            <a href="https://github.com/npwheaton/NodeStuff/tree/main/paintBoxWebApp" target="blank" class="uniqueprojectlink">Learn More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="prev arrowbutton" id= "prev" role= "button">&#10094;</div>
+                <div class="next arrowbutton" id= "next" role= "button">&#10095;</div>
+            </div>
+        </div>
+        
+        <div id="contactInfo" class="article">
+            <div id="contactanchor" class="anchor"></div>
+            <h2 id="contactheader"class="articleheader"><span class="headertext">Contact</span></h2>
+            <ul id="piclinks">
+                <li class="offsitelink"> <a href="mailto:mr.natewheaton@gmail.com" target="blank">mr.natewheaton@gmail.com</a>
+                </li>
+                <li class="offsitelink">
+                    <a href="https://www.linkedin.com/in/nathaniel-wheaton-5b1544187/" target="blank">Linkedin</a>
+                </li>
+
+                <li class="offsitelink" >
+                    <a href="https://github.com/npwheaton" target="blank">Github</a>
+                </li>
+
+                <li class="offsitelink">
+                    <a href="documents/updatedresume2021.docx" target="blank">Resume</a>
+            </ul>
+            <p>Send me an email</p>
+            <form action="" id="contactform">
+                <input type="email" name="email" id="inputemail" placeholder="Your email address" class= "formelem" required>
+                <input type="text" name="subject" id="inputsubject" placeholder="Subject" class= "formelem" required>
+                <textarea name="body" id="inputbody" cols="30" rows="10" placeholder="Body" class= "formelem" required></textarea>
+                <div id="filediv">
+                    <i class="fas fa-file-upload"></i>
+                    <input type="file" name="file" id="inputfile" multiple>
+                </div>
+                <div id="filesindicator"></div>
+                <input type="submit" value="Send" id="inputsubmit" class= "formelem">
+            </form>
+            <div id= "blockform"class="hideitem">
+                <span>Message Sent</span>
+            </div>
+            <div id="loadform"class="hideitem"><i class="fas fa-spinner"></i>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+        <nav id="navbar">
+            
+            <ul id="links">
+                <li >
+                    <a class="onsitelink" href="#aboutanchor">
+                        <span class="navicons"><i class="fas fa-id-card"></i></span>
+                        <span id="about" class="linktext">About</span>
+                    </a>
+                </li>
+
+
+
+                <li >
+                    <a class="onsitelink" href="#experienceanchor">
+                        <span class="navicons"><i class="fas fa-briefcase"></i></span>
+                        <span id="experience" class="linktext">Experience</span>
+                    </a>
+                </li>
+
+                <li >
+                    <a class="onsitelink" href="#projectsanchor">
+                        <span class="navicons"><i class="fas fa-laptop-code"></i></span>
+                        <span id="projects" class="linktext">Projects</span>
+                    </a>
+                </li>
+
+                <li >
+                    <a class="onsitelink" href="#contactanchor">
+                        <span class="navicons"><i class="fas fa-phone"></i></span>
+                        <span id="contact" class="linktext">Contact</span>
+                    </a>
+                </li>
+            </ul>
+            
+
+        </nav>
+        <div id="mobileContentButton" class="dormantcontentbutton"></div>
+        <footer id= "footer">
+            <p>Copyright 2021</p>
+        </footer>
+    </div>
+    <script src="graphicsTest.js"type="module"></script>
+    <script src="FileHolder.js" type="module"></script>
+    <script  src="StringAnimation.js"type="module"></script>
+    <script src="portfolio.js" type="module"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+    
+</body>
+</html>

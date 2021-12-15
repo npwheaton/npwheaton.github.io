@@ -1,0 +1,851 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georama', sans-serif;
+    color: white;
+}
+:root{
+    --h1font: 2.2rem;
+    --h2font: 2rem;
+    --h3font: 1.6rem;
+    --h4font: 1.4rem;
+    --pfont: 1.25rem;
+    --coolgradient: linear-gradient(to left,rgb(91, 125, 167) 0%, rgb(194,210,34) 33%, rgb(183, 130, 5) 66%);
+    --maincolor: rgb(128,255,0);
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    
+}
+body{
+    background: black;
+}
+p{
+    font-size: var(--pfont);
+}
+h1{
+    font-size: var(--h1font);
+}
+h2{
+    font-size: var(--h2font);
+}
+h3{
+    font-size: var(--h3font);
+}
+/* bar itself */
+body::-webkit-scrollbar{
+    width: 5px;
+    
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background-color: none;
+    
+}
+  
+  /* Handle */
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(4, 126, 10);
+    border-radius: 2px;
+}
+
+#canvas1{
+    position: fixed;
+    background: black;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#content{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    z-index: 2;
+    transition: width 0.5s, margin-left 0.5s ease;
+    border-left: 1px solid rgb(61, 61, 61);
+
+}
+#menubar{
+
+    position: fixed;
+    height: 5vh;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+	align-items: center;
+	padding: 25px 30px;
+    font-size: var(--h2font);
+    font-weight: bold;
+    transition: width 0.5s, margin-left 0.5s ease;
+    background: none;
+    border: none;
+}
+
+
+#menubar a:hover i, #menubar a:active i{
+    color: var(--maincolor);
+}
+#navbar{
+    position: fixed;
+    top: 0;
+    left: -225px;
+    width: 225px;
+    transition: left 0.5s ease;
+    z-index: 3;
+
+}
+
+body.active #navbar{
+    left: 0;
+}
+body.active #content{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+
+}
+#links{
+
+    list-style-type: none;
+    
+    
+}
+
+
+
+#links li a{
+    padding: 15px 0;
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: var(--pfont);
+    text-align: center;
+    border-bottom: 1px solid rgb(51, 51, 51);
+    transition: background-color 0.2s ease;
+
+}
+
+
+.navicons i{
+    width: 30px;
+    display: inline-block;
+    color: white;
+
+}
+.linktext{
+    color: white;
+}
+#links li a:hover, #links li a:active{
+    background: var(--maincolor);
+
+}
+#links li a:hover .navicons i, #links li a:active  .navicons i{
+    color: black;
+}
+#links li a:hover span, #links li a:active span{
+    color: black;
+
+}
+#piclinks{
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+#piclinks li{
+    margin: 10px 10px 0 10px;
+    transform: skew(15deg);
+    
+}
+
+#piclinks li a{
+    font-size: var(--pfont);
+    padding: 2px;
+    color: white;
+    background-color: black;
+    border: 1px solid var(--maincolor);
+    text-decoration: none;
+    
+}
+#piclinks li a:hover, #piclinks li a:active{
+    background-color: var(--maincolor);
+    color: black;
+    border: 1px solid black;
+    outline: 1px solid var(--maincolor);
+}
+#contactform{
+    position: relative;
+    width: 75%;
+    margin: auto;
+    text-align: left;
+    
+}
+.hideitem{
+    display: none;
+}
+.blockContentDiv{
+    position: relative;
+    width: 75%;
+    height: 75vh;
+    margin: auto;
+    font-size: var(--h2font);
+    border: 1px solid var(--maincolor);
+    text-align: center;
+}
+.spinnerloader{
+    display: block;
+    position: absolute;
+    margin: auto;
+    top:50%;
+    left: calc(50% - 3.5rem/2 - 1vw);
+    padding: 1vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10%;
+
+}
+.spinnerloader i{
+    color: var(--maincolor);
+    font-size: 3.5rem;
+    animation-name: rotatingloader;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.blockContentDiv span{
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    color: white;
+    font-size: var(--pfont);
+    margin: auto;
+    background-color: black;
+    border-left: 1px solid var(--maincolor);
+    transform: skew(15deg);
+}
+.formelem{
+    display: block;
+    width: 100%;
+    color: black;
+    height: var(--h2font);
+    font-size: var(--pfont);
+    margin-bottom: 15px;
+    padding: 3px 0;
+    
+}
+
+#inputbody{
+    height: 50vh;
+}
+#filediv{
+    display: inline;
+    position: relative;
+    width: var(--h2font);
+    color: white;
+    font-size: var(--h2font);
+    text-align: left;
+
+
+    
+}
+#filediv:hover i, #filediv:active i{
+    color: var(--maincolor);
+
+    
+}
+
+#inputfile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+
+}
+#filesindicator{
+    display: inline-block;
+    position: relative;
+}
+.fileitem{
+    color: white;
+    font-size: var(--pfont);
+}
+.fileitembutton:hover i,.fileitembutton:active i{
+    color: var(--maincolor);
+}
+#inputsubmit{
+    color: white;
+    background-color: black;
+    border: 1px solid var(--maincolor);
+    transform: skew(15deg);
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+#inputsubmit:hover, #inputsubmit:active{
+    background-color: var(--maincolor);
+    color: black;
+    border: 1px solid black;
+    outline: 1px solid var(--maincolor);
+}
+
+
+#banner{
+    position: relative;
+    text-align: center;
+    margin-bottom: 3vh;
+    
+    
+    
+}
+#threejsgraphic{
+    position: relative;
+    top: 0;
+    left: 0;
+    border-bottom:  1px solid rgba(61, 61, 61, 0.9);
+
+    
+    
+}
+#bannercontentcontainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /*background-color: linear-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0.5) ,rgba(0, 0, 0, 1) 99%);
+    */
+}
+
+#banner h1{
+    padding-top: 20vh;
+    position: relative;
+    color: white;
+    user-select: none;
+
+    
+}
+
+#name{
+    display: block;
+    width: 375px;
+    margin: auto;
+    position: relative;
+    padding-top: 10px;
+    font-size: 3.1rem;
+    
+    
+}
+#banner h1 span:hover{
+    color: var(--maincolor);
+}
+#quicklinks{
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    
+}
+#quicklinks ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+
+
+}
+#quicklinks ul li{
+    margin: 0 1.5vw 0 1.5vw;
+}
+#quicklinks a{
+    text-decoration: none;
+    font-size: var(--h2font);
+
+
+}
+#quicklinks ul li a:hover i, #quicklinks ul li a:active i{
+    color: var(--maincolor);
+
+}
+#readableContent{
+text-align: center;
+background: rgba(0, 0, 0, 0.6);
+
+
+
+}
+#footer{
+    position: relative;
+    top: 50;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    height: 10vh;
+    border-top:  1px solid rgba(61, 61, 61, 0.9);
+
+    
+}
+#footer p{
+    font-size: 15px;
+}
+.articleheader{
+    margin-bottom: 15px;
+    text-align: center;
+    
+    
+    
+}
+.headertext{
+    background: black;
+    /*linear-gradient(to right,rgb(6, 117, 6), rgb(58, 184, 58), rgb(255, 255, 255))
+    */
+    color: white;
+    border-bottom: 1px solid var(--maincolor);
+    display: inline-block;
+    padding: 0 3px 0 3px;
+    transform: skew(15deg);
+    
+    
+}
+
+.article{
+    position: relative;
+    padding: 5vh 1vw 5vh 1vh;
+    border-top:  1px solid rgba(61, 61, 61, 0.9);
+}
+.anchor{
+    position: absolute;
+    top: -5vh;
+}
+
+#aboutInfo{
+    border-top: none;
+    text-align: left;
+    scroll-margin-top: none;
+}
+
+
+#schoolinfo{
+    position: relative;
+    margin-top: 3vh;
+    text-align: left;
+    
+    
+    
+}
+
+#schoolinfo img{
+    display: inline;
+    height: 3rem;
+    width: 3.4rem;
+}
+#educationtagheader{
+    text-align: left;
+    margin-bottom: 10px;
+}
+#skills{
+    text-align: center;
+
+}
+#skillheader{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#skilllist li{
+    list-style-type: none;
+    margin: 5px 0 6px 0;
+    
+    
+    
+    
+}
+#skilllist li h3{
+    font-weight: 200;
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    
+}
+.progresscontainer{
+    position: relative;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: auto;
+    display: inline-block;
+}
+.progressbar{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 50%;
+    border-radius: 20px;
+    border-right: 1px solid white;
+    
+}
+.progressbartext{
+    color: black;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+}
+#experienceInfo{
+    position: relative;
+    z-index: 2;
+}
+.job{
+    position: relative;
+    text-align: left;
+    margin-bottom: 3vh;
+
+}
+.companyname{
+    border-left: 1px solid var(--maincolor);
+}
+.jobbutton:hover i, .jobbutton:active i{
+    color: var(--maincolor);
+}
+.jobbutton{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.jobbutton i{
+    font-size: var(--h2font);
+}
+
+.jobtitle{
+    font-weight: 200;
+
+
+}
+.jobduration{
+    margin-left: 7vw;
+    font-size: var(--pfont);
+
+}
+.jobduties{
+    position: relative;
+    margin-top: 3vh;
+    list-style-type: none;
+    transition: display 0.5s ease;
+
+
+}
+.duty{
+    font-size: var(--pfont);
+    margin-bottom: 5px;
+}
+#projectsInfo{
+    position: relative;
+    z-index: 2;
+}
+.projectDiv{
+    position: relative;
+    text-align: left;
+    transition: display 0.5s ease;
+}
+
+.projectDiv img{
+
+    height: 45vh;
+    width: 40vw;
+    max-width: 400px;
+    max-height: 300px;
+    transform: skew(5deg);
+    border-radius: 5%;
+    margin-right: 2vw;
+    margin-left: 2vw;
+}
+.projectArticle{
+    position: absolute;
+    top: 0;
+    text-align: left;
+    display: inline-block;
+    height: 50%;
+    
+
+}
+.uniqueprojecthead{
+    border-left: 1px solid var(--maincolor);
+    text-align: left;
+    margin-bottom: 10px;
+}
+.projectArticle p{
+    margin-bottom: 20px;
+}
+.uniqueprojectlink{
+    display: inline-block;
+    position: relative;
+    font-size: var(--pfont);
+    text-decoration: none;
+    transform: skew(15deg);
+    border: 1px solid var(--maincolor);
+    padding: 2px;
+}
+.uniqueprojectlink:hover, .uniqueprojectlink:active{
+    background-color: var(--maincolor);
+    color: black;
+    border: 1px solid black;
+    outline: 1px solid var(--maincolor);
+}
+#dotContainer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.dot{
+    background: rgb(37, 37, 37);
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 1vw 0 1vw;
+    transition: background-color 0.5s ease, border 0.5s ease;
+    cursor: pointer;
+    
+}
+.currentdot{
+    background: rgb(4, 126, 10);
+}
+.dot:hover, .dot:active{
+    background: rgb(4, 126, 10);
+    border: 2px solid white;
+}
+.prev, .next{
+    font-weight: bold;
+    font-size: var(--h1font);
+    width: auto;
+    position: absolute;
+    display: inline-block;
+    padding: 2vw;
+    top: 50%;
+    border-radius: 10%;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.4;
+    
+}
+.prev{
+    left: 0;
+    animation-name: slidingright;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+.next{
+    right: 0;
+    animation-name: slidingleft;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.prev:active, .next:active{
+    background-color: rgba(61, 61, 61, 0.5);
+}
+@keyframes slidingright{
+    0% {
+        transform: translate(0);
+    }
+
+    50%{
+        transform: translate(15%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+@keyframes slidingleft{
+    0% {
+        transform: translate(0);
+    }
+    
+    50%{
+        transform: translate(-15%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+@keyframes rotatingloader{
+    0%{transform: rotate(0deg);
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#contactInfo{
+    position: relative;
+    z-index: 2;
+}
+
+.fullbar{
+    display: inline-block;
+    width: 60px;
+    border: 1px solid white;
+    position: relative;
+
+    margin-left: 3px;
+
+}
+.currentbarprogress{
+    position: relative;
+    background-color: var(--maincolor);
+    height: 10px;
+    transition: width 0.2s ease;
+}
+
+
+
+.dormantcontentbutton{
+    display: none;
+}
+
+.activecontentbutton{
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 500px){
+    body.active #content {
+      width: 100%;
+      margin-left: 0;
+    }
+    body.active #menubar{
+        width: 25%;
+        margin-left: 74.7%;  
+    }
+    #navbar{
+        left: -75%;
+        width: 75%;
+        
+    }
+    #links{
+        border-right: 1px solid rgb(61, 61, 61);
+    }
+    .anchor{
+        top: 5vh;
+    }
+    .article{
+        padding: 5vh 1vw 5vh 1vw;
+        border-bottom:  1px solid rgba(61, 61, 61, 0.9);
+    }
+
+    #name{
+        width: auto;
+    }
+    #menubar{
+        padding: 25px 15px;
+    }
+    #schoolinfo{
+        text-align: left;
+        
+        
+        
+    }
+    .dormantcontentbutton{
+        display: none;
+        left: -200%;
+    
+    
+    }
+    
+    .activecontentbutton{
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    
+    
+    }
+    #quicklinks{
+        bottom: 15vh;
+    }
+    #quicklinks ul{
+        justify-content: space-around;
+    }
+    #quicklinks ul li{
+        margin: none;
+    }
+    .projectDiv img{
+
+        height: 40vh;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        transform: none;
+    }
+    .projectArticle{
+        position: relative;
+        
+        text-align: left;
+        display: block;
+        height: auto;
+        
+    
+    }
+    .projectheaderonly{
+        text-align: center;
+    }
+    .projectlinkonly{
+        text-align: center;
+    }
+    .uniqueprojecthead{
+        display: inline-block;
+        border-left: none;
+        border-bottom: 1px solid var(--maincolor);
+    }
+    #skilllist li h3{
+        display: block;
+        width: auto;
+        text-align: center;
+    }
+
+    .progresscontainer{
+        position: relative;
+        width: 85%;
+        border: 1px solid white;
+        border-radius: 20px;
+        margin: auto;
+        display: block;
+    }
+    .progressbar{
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 1rem;
+        width: 50%;
+        border-radius: 20px;
+        background: linear-gradient(to right,rgb(7, 141, 7) 0%, rgb(58, 184, 58) 33%, rgb(255, 255, 255) 80%);
+    }
+    .dot{
+        margin: 0 2vw 0 2vw;
+    }
+  }
+@media only screen and (min-width: 1200px){
+    .prev:hover, .next:hover{
+        background-color: rgba(61, 61, 61, 0.5);
+    }
+
+}
