@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.skypack.dev/three';
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.tsl.js';
 
 //global variables for matrix
 const canvas = document.getElementById('canvas1');
