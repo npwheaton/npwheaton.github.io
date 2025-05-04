@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js';
+import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
 
 //global variables for matrix
 const canvas = document.getElementById('canvas1');
